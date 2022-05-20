@@ -33,7 +33,13 @@ php vendor/bin/codecept generate:cest acceptance First
 
 composer require vlucas/phpdotenv  
  
-
-
+### Cloud Heroku
+https://dashboard.heroku.com
+#### Deploiement
+heroku login
+- ajout repo
+heroku git:remote -a cnd-app-weather
+-deploy
+git push heroku main
 ### Guides
 

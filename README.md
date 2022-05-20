@@ -15,6 +15,7 @@ température horaire du mois de juillet 2015.
 
 ## installer les dependences
     composer install
+    cp .env.dist .env
 
 ## Lancer les tests unitaires
     composer tests
