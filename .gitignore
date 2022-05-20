@@ -1,0 +1,10 @@
+#ignore dependances
+vendor
+#ignore ide settigngs
+.idea
+#ignore documentation
+documentation
+#ignore cache
+.phpunit.result.cache
+#ingore ENV
+.env
