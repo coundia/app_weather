@@ -11,7 +11,7 @@ température horaire du mois de juillet 2015.
 
 ## Prerequis 
 
-    PHP 7 ou plus.
+    PHP 7.2.5 ou plus.
 
 ## installer les dependences
     composer install
@@ -28,6 +28,6 @@ température horaire du mois de juillet 2015.
 
 ## Lien de tests
 
-  
+[https://cnd-app-weather.herokuapp.com/](https://cnd-app-weather.herokuapp.com/)
 
 

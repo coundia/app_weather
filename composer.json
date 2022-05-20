@@ -25,6 +25,7 @@
         "interation_test": "vendor/bin/codecept run --steps"
     },
     "require": {
-        "vlucas/phpdotenv": "^5.4"
+        "vlucas/phpdotenv": "^5.4",
+        "twig/twig": "^3.4"
     }
 }

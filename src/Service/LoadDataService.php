@@ -41,12 +41,12 @@ class LoadDataService
     }
 
     /**
-     * Fetch value  in  .env file
-     * @return string[]
+     * Load value  in  .env file
+     * @return void
      */
-    public static function loadDotEnv()
+    public static function loadDotEnv():void
     {
-        return Dotenv::createMutable(dirname(__DIR__), "/../.env")->load();
+          Dotenv::createMutable(dirname(__DIR__), "/../.env")->load();
     }
 
     /**
@@ -84,16 +84,12 @@ class LoadDataService
     }
 
     /***
-     * @param $pathName
+     * Get veriable in .env
+     * @param string $varName
      * @return string
-     * @throws Exception
      */
-    public static function getPath($pathName)
+    public static function getVarsFromEnv(string $varName): string
     {
-        $path = $_ENV[$pathName] ?? "";
-        if(empty($path)){
-            throw new Exception("Chemin du fichier XML incorrect .");
-        }
-        return $path;
+        return $_ENV[$varName] ?? $varName;
     }
 }

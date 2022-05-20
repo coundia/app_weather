@@ -6,6 +6,7 @@ vendor
 documentation
 #ignore cache
 .phpunit.result.cache
+cache
 #ingore ENV
 .env
 #ignore output

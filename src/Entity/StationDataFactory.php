@@ -7,16 +7,16 @@ use function date_create;
 /****
  * The StationDataFactory create  a StationData from a recursive iteration
  * over all nodes of a <b>SimpleXMLIterator</b> object.
- * @param SimpleXMLIterator $data
+ * @param \SimpleXMLIterator $data
  * @link https://php.net/manual/en/class.simplexmliterator.php
  */
 class StationDataFactory
 {
     /**
-     * @param SimpleXMLIterator $stationDataNode station data xml node
+     * @param \SimpleXMLIterator $stationDataNode station data xml node
      * @return StationData a station data
      */
-    public function createStationDataFromXmlNode(SimpleXMLIterator $stationDataNode): StationData
+    public function createStationDataFromXmlNode(\SimpleXMLIterator $stationDataNode): StationData
     {
         $datetime = date_create();
         $attribute = $stationDataNode->attributes();
@@ -31,34 +31,5 @@ class StationDataFactory
         $stnpress = is_float( $stationDataNode->stnpress)? $stationDataNode->stnpress:floatval($stationDataNode->stnpress);
         return new StationData( $temp,  $dptemp,  $relhum,  $winddir,  $windspd,  $visibility,  $stnpress, $datetime);
     }
-    /*
-      +"@attributes": array:6 [
-    "day" => "1"
-    "hour" => "0"
-    "minute" => "0"
-    "month" => "7"
-    "year" => "2015"
-    "quality" => ""
-  ]
-  +"temp": "17.9"
-  +"dptemp": "16.8"
-  +"relhum": "93"
-  +"winddir": "22"
-  +"windspd": "13"
-  +"visibility": "24.1"
-  +"stnpress": "100.40"
-  +"humidex": SimpleXMLIterator {#45
-    +"@attributes": array:1 [
-      "description" => "Humidex"
-    ]
-  }
-  +"windchill": SimpleXMLIterator {#38
-    +"@attributes": array:1 [
-      "description" => "Wind Chill"
-    ]
-  }
-  +"weather": "Rain Showers"
-}
-     */
 
 }
