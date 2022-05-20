@@ -18,7 +18,7 @@ température horaire du mois de juillet 2015.
 ## Lancer les tests unitaires
     composer tests
 
-## Lancer les tests unitaires
+## Lancer les tests d' interations
     composer interation_test
 
 ## Lancer le projet
