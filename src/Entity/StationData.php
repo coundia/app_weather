@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Entity;
+use Datetime;
+
 /**
  * The StationData class save the weather information
  */
@@ -13,7 +15,7 @@ class StationData
     private float $windspd;
     private float $visibility;
     private float $stnpress;
-    private   \Datetime $datetime;
+    private Datetime $datetime;
 
     /***
      * @param float $temp Temperature in C
@@ -23,9 +25,9 @@ class StationData
      * @param float $windspd Wind Speed   in km/h
      * @param float $visibility Visibility Km
      * @param float $stnpress Station Pressure  kPa
-     * @param \Datetime $datetime date
+     * @param Datetime $datetime date
      */
-    public function __construct(float $temp, float $dptemp, float $relhum, float $winddir, float $windspd, float $visibility, float $stnpress, \Datetime $datetime)
+    public function __construct(float $temp, float $dptemp, float $relhum, float $winddir, float $windspd, float $visibility, float $stnpress, Datetime $datetime)
     {
         $this->temp = $temp;
         $this->dptemp = $dptemp;
@@ -36,10 +38,6 @@ class StationData
         $this->stnpress = $stnpress;
         $this->datetime = $datetime;
     }
-
-
-
-
 
 
     /**
@@ -155,22 +153,20 @@ class StationData
     }
 
     /**
-     * @return \Datetime
+     * @return Datetime
      */
-    public function getDatetime(): \Datetime
+    public function getDatetime(): Datetime
     {
         return $this->datetime;
     }
 
     /**
-     * @param \Datetime $datetime
+     * @param Datetime $datetime
      */
-    public function setDatetime(\Datetime $datetime): void
+    public function setDatetime(Datetime $datetime): void
     {
         $this->datetime = $datetime;
     }
-
-
 
 
 }

@@ -5,10 +5,12 @@ namespace App\Service;
 use App\Entity\ClimateData;
 use App\Entity\ClimateDataFactory;
 use App\Entity\LegendFactory;
-use App\Entity\StationData;
 use App\Entity\StationDataFactory;
 use App\Entity\StationInformationFactory;
 use Dotenv\Dotenv;
+use Exception;
+use SimpleXmlIterator;
+use function dirname;
 
 /**
  * The LoadDataService class provides the main functionalities for loading data from file
@@ -44,7 +46,7 @@ class LoadDataService
      */
     public static function loadDotEnv()
     {
-        return Dotenv::createMutable(\dirname(__DIR__), "/../.env")->load();
+        return Dotenv::createMutable(dirname(__DIR__), "/../.env")->load();
     }
 
     /**
@@ -54,7 +56,7 @@ class LoadDataService
      */
     public function getAllStationData(string $path):ClimateData
     {
-        $xml = new \SimpleXmlIterator($path, 0, true);
+        $xml = new SimpleXmlIterator($path, 0, true);
         //create the factories
 
         //load and store lang node in climateData
@@ -84,13 +86,13 @@ class LoadDataService
     /***
      * @param $pathName
      * @return string
-     * @throws \Exception
+     * @throws Exception
      */
     public static function getPath($pathName)
     {
         $path = $_ENV[$pathName] ?? "";
         if(empty($path)){
-            throw new \Exception("Chemin du fichier XML incorrect .");
+            throw new Exception("Chemin du fichier XML incorrect .");
         }
         return $path;
     }

@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Entity;
+use SplDoublyLinkedList;
+
 /**
  * The ClimateData class provides the functionalities for saving the XML element (StationData) as a doubly linked list.
  * @link https://php.net/manual/en/class.spldoublylinkedlist.php
@@ -10,20 +12,20 @@ class ClimateData
     private $lang;
     private StationInformation $stationInformation;
     private $legend;
-    private \SplDoublyLinkedList $listStationData;
+    private SplDoublyLinkedList $listStationData;
 
     /**
      * @param StationInformation $stationInformation
      * @param Legend $legend
-     * @param \SplDoublyLinkedList $listStationData
+     * @param SplDoublyLinkedList $listStationData
      * @param string $lang
      */
-    public function __construct(StationInformation $stationInformation, Legend $legend, \SplDoublyLinkedList $listStationData, string $lang="ENG")
+    public function __construct(StationInformation $stationInformation, Legend $legend, SplDoublyLinkedList $listStationData, string $lang = "ENG")
     {
         $this->lang = $lang;
-        $this->stationInformation = $stationInformation ;
-        $this->legend = $legend ;
-        $this->listStationData = $listStationData ;
+        $this->stationInformation = $stationInformation;
+        $this->legend = $legend;
+        $this->listStationData = $listStationData;
     }
 
     /**
@@ -75,17 +77,17 @@ class ClimateData
     }
 
     /**
-     * @return \SplDoublyLinkedList
+     * @return SplDoublyLinkedList
      */
-    public function getListStationData(): \SplDoublyLinkedList
+    public function getListStationData(): SplDoublyLinkedList
     {
         return $this->listStationData;
     }
 
     /**
-     * @param \SplDoublyLinkedList $listStationData
+     * @param SplDoublyLinkedList $listStationData
      */
-    public function setListStationData(\SplDoublyLinkedList $listStationData): void
+    public function setListStationData(SplDoublyLinkedList $listStationData): void
     {
         $this->listStationData = $listStationData;
     }
@@ -98,8 +100,6 @@ class ClimateData
     {
         $this->listStationData->push($currentStationData);
     }
-
-
 
 
 }

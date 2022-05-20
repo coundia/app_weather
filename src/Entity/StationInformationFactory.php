@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Entity;
+use SimpleXMLIterator;
+
 /**
  * The StationInformation class provides recursive iteration over all nodes of a <b>stationdata</b> object.
  * @link https://php.net/manual/en/class.simplexmliterator.php
@@ -11,10 +13,10 @@ class StationInformationFactory
 {
     /**
      * Create an StationInformation
-     * @param \SimpleXMLIterator $stationinformation
+     * @param SimpleXMLIterator $stationinformation
      * @return StationInformation
      */
-    public function createStationinformationFromXmlNode(\SimpleXMLIterator $stationinformation):StationInformation
+    public function createStationinformationFromXmlNode(SimpleXMLIterator $stationinformation): StationInformation
     {
         $name = strval($stationinformation->name);
         $province = strval($stationinformation->province);
