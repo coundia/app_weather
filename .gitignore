@@ -8,3 +8,6 @@ documentation
 .phpunit.result.cache
 #ingore ENV
 .env
+#ignore output
+_output/**
+_data/**

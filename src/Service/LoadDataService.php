@@ -81,4 +81,17 @@ class LoadDataService
         return $climateData;
     }
 
+    /***
+     * @param $pathName
+     * @return string
+     * @throws \Exception
+     */
+    public static function getPath($pathName)
+    {
+        $path = $_ENV[$pathName] ?? "";
+        if(empty($path)){
+            throw new \Exception("Chemin du fichier XML incorrect .");
+        }
+        return $path;
+    }
 }
