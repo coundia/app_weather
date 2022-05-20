@@ -6,6 +6,6 @@ class HomeCest
     public function tryToTest(AcceptanceTester $I)
     {
         $I->amOnPage('/');
-        $I->see('Température');
+        $I->see('Température',"h1");
     }
 }
