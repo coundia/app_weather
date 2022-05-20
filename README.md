@@ -10,7 +10,7 @@ température horaire du mois de juillet 2015.
 
 ## Prerequis 
 
-    PHP 7.2 or above.
+    PHP 7 ou plus.
 
 ## installer les dependences
     composer install
