@@ -1,0 +1,38 @@
+{% set climateDate = "July 2015"|date("U") %}
+<div class="grid">
+    <div class="month">
+        {{ climateDate|date('F') }}
+    </div>
+    <div class="day-of-week">
+        <div>Dimanche</div>
+        <div>Lundi</div>
+        <div>Mardi</div>
+        <div>Mercredi</div>
+        <div>Jeudi</div>
+        <div>Vendredi</div>
+        <div>Samedi</div>
+    </div>
+
+    <div class="date-grid">
+        {% set numberOfDaysInMonth = climateDate|date('t') %}
+        {% set firstDays = climateDate|date('F 1\\s\\t Y')|date('w')   %}
+        {% if firstDays and firstDays!=0 %}
+            {% for n in range(1,firstDays) %}
+                <div class="before-first-day"></div>
+            {% endfor %}
+        {% endif %}
+        {% for day in range(1,numberOfDaysInMonth) %}
+            <div class="date-grid-content">
+                <div>
+                    <div class="text-bold">{{ day }}</div>
+                     {% if temperatures[day]  is defined %}
+                        <div>Max : {{ temperatures[day]['max'] }}</div>
+                        <div>Min : {{ temperatures[day]['min'] }}</div>
+                        <div>Moy : {{ temperatures[day]['moy'] }}</div>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+</div>

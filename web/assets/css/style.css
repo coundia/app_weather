@@ -1,0 +1,17 @@
+.grid-container{
+    display: grid;
+}
+.day-of-week,
+.date-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    border: 1px solid ;
+}
+.date-grid-content{
+    border: 1px solid ;
+     text-align : center;
+}
+.text-bold{
+    font-weight : bold;
+    font-size : 20px;
+}

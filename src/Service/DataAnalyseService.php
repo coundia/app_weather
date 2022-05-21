@@ -3,7 +3,7 @@
 namespace App\Service;
 
 
-
+use App\Entity\StationData;
 use SplDoublyLinkedList;
 
 /**
@@ -11,9 +11,24 @@ use SplDoublyLinkedList;
  */
 class DataAnalyseService
 {
-
-    public function getTemperature(SplDoublyLinkedList $getListStationData)
+    /**
+     * @param SplDoublyLinkedList $climateData
+     */
+    public function getWeatherData(SplDoublyLinkedList $climateData)
     {
         //todo
+
+        $data=[];
+        for($i=1;$i<=31;$i++){
+           $data[$i]=array('min' =>$i,'max'=>$i+1,'moy'=>$i+2);
+        }
+        return $data;
+        for ($climateData->rewind(); $climateData->valid(); $climateData->next()) {
+            /** @var StationData $current */
+            $current = $climateData->current();
+           // print_r($current->getDatetime()->format("W"));
+
+        }
+
     }
 }
