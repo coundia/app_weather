@@ -22,6 +22,7 @@ class DataAnalyseService
         for($i=1;$i<=31;$i++){
            $data[$i]=array('min' =>$i,'max'=>$i+1,'moy'=>$i+2);
         }
+        $data["date"]=\date_create();
         return $data;
         for ($climateData->rewind(); $climateData->valid(); $climateData->next()) {
             /** @var StationData $current */

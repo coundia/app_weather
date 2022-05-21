@@ -1,17 +1,33 @@
+/*main grid*/
 .grid-container{
     display: grid;
 }
-.day-of-week,
-.date-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    border: 1px solid ;
+/*calendar grid*/
+.calendar-grid{
+    border:   0.001em solid ;
 }
-.date-grid-content{
-    border: 1px solid ;
-     text-align : center;
+.calendar-item,
+.calendar-day {
+    display: grid;
+    /*size of column at 7 */
+    grid-template-columns: repeat(7,1fr);
+
+}
+.date-grid-content,
+.day-item,
+.calendar-item{
+     border-top:  3px solid ;
+     border-right:   0.001em solid ;
+}
+/*center a text*/
+.text-center{
+    text-align : center;
 }
 .text-bold{
     font-weight : bold;
     font-size : 20px;
+}
+/*calendar month*/
+.calendar-month{
+    margin: 2px;
 }
