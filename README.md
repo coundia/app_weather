@@ -53,6 +53,41 @@ juillet 2015.
     DataAnalyseService
         +getBestDaySummerEvent()
 
+#### Commentaires
+    Pour obtenir le milleur jour : 
+    Je me suis basé sur la moyenne par Jour (le soir) d'un parametre score que j'ai calculé comme suit :
+    1.J'ai attribu chaque parametre météorologique un poids posif ou negatif
+        1.1 : Positif  si le parametre entrainne une bonne condition 
+        1.2 : Negatif  si le parametre entrainne une maivaise condition 
+        1.3 : Le jour qui le score le plus grand est le meilleur
+
+        ci-dessous la configuration qui se trouve dans le fichier .env
+
+    2.Configuration des parametres 
+
+        Ces parametres peuvent etre ajustes par un expert en meteorologie
+
+        WEIGHT_DB_TEMP = -1     #Température du point : entraine une maivaise condition
+        WEIGHT_REL_HUM = -1     #Humidité relative : entraine une maivaise condition
+        WEIGHT_WINDDIR = -1     #Direction du vent : entraine une maivaise condition
+        WEIGHT_WINSPD = -1      #Vitesse du vent : entraine une maivaise condition
+        WEIGHT_STNPRESS = -1    #Station Pressure : entraine une maivaise condition
+        # 
+        WEIGHT_TEMP = 100        #Température entraine une bonne condition
+        WEIGHT_VISIBILITY = 100  #Visibility" units: entraine une bonne condition
+
+<stationdata jour="1" heure="2" minute="0" mois="7" année="2015" qualité="‡">
+<temp description="Température" units="°C">17,5</temp>
+<dptemp description="Température du point de rosée" units="°C">16,2</dptemp>
+<relhum description="Humidité relative" units="%">92</relhum>
+<winddir description="Direction du vent" units="10s deg">5</winddir>
+<windspd description="Vitesse du vent" units="km/h">10</windspd>
+<visibility description="Visibility" units="km">16.1</visibility>
+<stnpress description="Station Pressure" units="kPa">100,31</stnpress>
+<humidex description="Humidex"/>
+<windchill description="Froid éolien"/>
+<weather description="Weather">Averses de pluie</weather>
+</stationdata>
 
 ## Question : 3
     Afficher la moyenne de température par période (matin, après midi, soir, nuit) de la
