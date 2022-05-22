@@ -3,7 +3,6 @@
 namespace Tests\DotEnv;
 
 use App\Service\LoadDataService;
-use Dotenv\Dotenv;
 use PHPUnit\Framework\TestCase;
 
 final class DotEnvTest extends TestCase

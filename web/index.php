@@ -5,6 +5,7 @@ use App\Service\DataAnalyseService;
 use App\Service\LoadDataService;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
+
 require dirname(__DIR__) . '/vendor/autoload.php';
 //load .env
 LoadDataService::loadDotEnv();
@@ -37,7 +38,7 @@ $data = [];
 $data["title"] = LoadDataService::getVarsFromEnv("TITLE");
 $data["bestDayTitle"] = LoadDataService::getVarsFromEnv("BEST_DAY_TITLE");
 $data["dailyAvgTitle"] = LoadDataService::getVarsFromEnv("DAILY_AVG_TITLE");
-//get analysed data
+//get analysed data : Question 1
 $data["analyseData"] = $dataAnalyseService->getListModelAnalysed($climateData->getListStationData());
 //get current datetime to analyse
 $data["weatherDateTime"] = $dataAnalyseService->getWeatherDateTime();
@@ -53,9 +54,9 @@ $dayEnd = LoadDataService::getVarsFromEnv("DAY_END");
 $dateStart  = date_create()->setDate($years, $month, $dayStart);
 //set current end date to analyse
 $dateEnd    = date_create()->setDate($years, $month, $dayEnd);
-//get best day
+//get best day : Question 2
 $data["bestDaySummer"] = $dataAnalyseService->getBestDaySummerEvent($data["analyseData"], $dateStart, $dateEnd);
-//get average temp by period
+//get average temp by period  : Question 3
 $data["avgTempByPeriod"] = $dataAnalyseService->getAvgTempByPeriod($data["analyseData"]);
 //dd($data);
 //render the views
