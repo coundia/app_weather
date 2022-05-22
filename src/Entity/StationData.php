@@ -180,10 +180,10 @@ class StationData
         $weight += $this->relhum * LoadDataService::getVarsFromEnv("WEIGHT_REL_HUM");
         $weight += $this->winddir * LoadDataService::getVarsFromEnv("WEIGHT_WINDDIR");
         $weight += $this->windspd * LoadDataService::getVarsFromEnv("WEIGHT_WINSPD");
-        $weight += $this->visibility * LoadDataService::getVarsFromEnv("WEIGHT_VISIBILITY");
         $weight += $this->stnpress * LoadDataService::getVarsFromEnv("WEIGHT_STNPRESS");
         //more weight => good day
-        // $weight += $this->temp / LoadDataService::getVarsFromEnv("WEIGHT_TEMP");
+        $weight += $this->visibility * LoadDataService::getVarsFromEnv("WEIGHT_VISIBILITY");
+        $weight += $this->temp * LoadDataService::getVarsFromEnv("WEIGHT_TEMP");
         return round($weight, 2);
     }
 

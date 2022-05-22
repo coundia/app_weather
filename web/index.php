@@ -49,8 +49,8 @@ $data["analyseData"] = $dataAnalyseService->getListModelAnalysed($climateData->g
 $data["weatherDateTime"] = $dataAnalyseService->getWeatherDateTime();
 $debut = date_create()->setDate(2015, 07, 9);
 $fin = date_create()->setDate(2015, 07, 19);
-
 $data["bestDaySummer"] = $dataAnalyseService->getBestDaySummerEvent($data["analyseData"], $debut, $fin);
 $data["avgTempByPeriod"] = $dataAnalyseService->getAvgTempByPeriod($data["analyseData"]);
+//dd($data);
 //render the views
 echo $twig->render('weather.html.twig', $data);
