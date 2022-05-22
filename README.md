@@ -125,7 +125,7 @@ juillet 2015.
 
 ## References 
 
-### Resultat final  :
+### Resultat Obtenu  :
 
 ![uploads/resultat.png](uploads/resultat.png)
 ### Resultat attendu :
