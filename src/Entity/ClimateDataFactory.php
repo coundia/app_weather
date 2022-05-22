@@ -3,15 +3,20 @@
 namespace App\Entity;
 use SplDoublyLinkedList;
 
-/****
+/**
  * The ClimateDataFactory create a ClimateData
- * @link https://php.net/manual/en/class.simplexmliterator.php
+ *
+ * @see ClimateData
  */
 class ClimateDataFactory
 {
     /**
      * Create a ClimateData Object
-     * @return ClimateData
+     *
+     * @param StationInformation $StationInformation a StationInformation
+     * @param Legend $legend a Legend
+     * @param string $lang  a language
+     * @return ClimateData a ClimateData
      */
     public function createClimateData(StationInformation $StationInformation, Legend $legend, $lang):ClimateData
     {

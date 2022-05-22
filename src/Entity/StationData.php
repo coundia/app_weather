@@ -9,13 +9,37 @@ use Datetime;
  */
 class StationData
 {
+    /**
+     * @var float Temperature
+     */
     private float $temp;
+    /**
+     * @var float Dew Point Temperature
+     */
     private float $dptemp;
+    /**
+     * @var float Relative Humidity
+     */
     private float $relhum;
+    /**
+     * @var float Wind Direction
+     */
     private float $winddir;
+    /**
+     * @var float Wind Speed
+     */
     private float $windspd;
+    /**
+     * @var float Visibility
+     */
     private float $visibility;
+    /**
+     * @var float Station Pressure
+     */
     private float $stnpress;
+    /**
+     * @var Datetime  Datetime loaded
+     */
     private Datetime $datetime;
 
     /***
@@ -175,13 +199,13 @@ class StationData
      */
     public function getWeightOfModel(): float
     {
-        //less weight => good day
+        // less weight => good day
         $weight = $this->dptemp * LoadDataService::getVarsFromEnv("WEIGHT_DB_TEMP");
         $weight += $this->relhum * LoadDataService::getVarsFromEnv("WEIGHT_REL_HUM");
         $weight += $this->winddir * LoadDataService::getVarsFromEnv("WEIGHT_WINDDIR");
         $weight += $this->windspd * LoadDataService::getVarsFromEnv("WEIGHT_WINSPD");
         $weight += $this->stnpress * LoadDataService::getVarsFromEnv("WEIGHT_STNPRESS");
-        //more weight => good day
+        // more weight => good day
         $weight += $this->visibility * LoadDataService::getVarsFromEnv("WEIGHT_VISIBILITY");
         $weight += $this->temp * LoadDataService::getVarsFromEnv("WEIGHT_TEMP");
         return round($weight, 2);

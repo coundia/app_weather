@@ -1,5 +1,7 @@
 # app_weather
 
+Application meteo en Php 
+
 # Objectif
 
 **Charger** et **analyser** les données de température du mois de juillet 2015 à Québec en langage PHP et les afficher
@@ -31,6 +33,7 @@ juillet 2015.
 ├── Procfile                    # Fichier de deploiement du cloud heroku
 ├── HELP.md                     # Fichier contenant le reference des dependances utilisees 
 ├── README.md                   # Fichier contenant la documentation du projet
+├── docs                        # Dossier  contenant la documentation du code (phpDoc)
 └── .env                        # Fichier de configuration des parametres du projet
 </pre>
 
@@ -103,7 +106,12 @@ juillet 2015.
     composer interation_test
 
 ## Lancer le projet
-    composer start
+    composer start 
+    run the project on  [http://localhost:8888/](http://localhost:8888/)
+
+## Voir la documentation (phpDoc) du  projet
+    composer docs 
+    run the project on  [http://localhost:8889/](http://localhost:8889/)
 
 ## Lien publique pour tester (heroku)
 

@@ -14,7 +14,9 @@ final class LoadDataServiceTest extends TestCase
      * @var LoadDataService
      */
     private $loadDataService;
-
+    /**
+     * This method is called before each test.
+     */
     protected function setUp(): void
     {
         LoadDataService::loadDotEnv();

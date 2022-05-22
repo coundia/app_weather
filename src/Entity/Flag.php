@@ -2,14 +2,22 @@
 
 namespace App\Entity;
 /**
- * The Flag class
+ * The Flag class store symbols and descriptions
  */
 class Flag
 {
+    /**
+     * @var string a symbol of flag
+     */
     private string $symbol;
+    /**
+     * @var string a description of flag
+     */
     private string $description;
 
     /**
+     * Construct
+     *
      * @param string $symbol
      * @param string $description
      */

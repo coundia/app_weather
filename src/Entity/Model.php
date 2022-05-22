@@ -7,20 +7,54 @@ namespace App\Entity;
  */
 class Model
 {
+    /**
+     * @var float morning temperature average
+     */
     private float $morningTempAverage;
+    /**
+     * @var float afternoon temperature average
+     */
     private float $afternoonTempAverage;
+    /**
+     * @var float evening  temperature average
+     */
     private float $eveningTempAverage;
+    /**
+     * @var float night temperature average
+     */
     private float $nightTempAverage;
-
+    /**
+     * @var float morning weight average
+     */
     private float $morningWeightAverage;
+    /**
+     * @var float afternoon Weight Average
+     */
     private float $afternoonWeightAverage;
+    /**
+     * @var float evening Weight Average
+     */
     private float $eveningWeightAverage;
+    /**
+     * @var float night Weight Average
+     */
     private float $nightWeightAverage;
+    /**
+     * @var float day Min Temp
+     */
     private float $dayMinTemp;
+    /**
+     * @var float day Max Temp
+     */
     private float $dayMaxTemp;
+    /**
+     * @var float day Avg Temp
+     */
     private float $dayAvgTemp;
 
     /**
+     * Constructor of Model
+     *
      * @param float $morningTempAverage
      * @param float $afternoonTempAverage
      * @param float $eveningTempAverage

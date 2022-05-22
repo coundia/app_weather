@@ -4,15 +4,17 @@ namespace App\Entity;
 use SimpleXMLIterator;
 use function date_create;
 
-/****
- * The StationDataFactory create  a StationData from a recursive iteration
- * over all nodes of a <b>SimpleXMLIterator</b> object.
- * @param SimpleXMLIterator $data
- * @link https://php.net/manual/en/class.simplexmliterator.php
+/**
+ * The StationDataFactory class create a StationData
+ *
+ * @see /App/Entity/StationData
+ *
  */
 class StationDataFactory
 {
     /**
+     * createStationDataFromXmlNode provides StationData from XML node
+     *
      * @param SimpleXMLIterator $stationDataNode station data xml node
      * @return StationData a station data
      */

@@ -6,10 +6,14 @@ use SplDoublyLinkedList;
 
 /**
  * The Legend class provides the functionalities for saving the XML node (Flag) Array data as a doubly linked list.
+ *
  * @link https://php.net/manual/en/class.spldoublylinkedlist.php
  */
 class Legend
 {
+    /**
+     * @var SplDoublyLinkedList
+     */
     private SplDoublyLinkedList $flag;
 
     /**

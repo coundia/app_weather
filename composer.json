@@ -21,6 +21,7 @@
     },
     "scripts": {
         "start": "php -S localhost:8888 -t web",
+        "docs":  "php -S localhost:8889 -t docs",
         "tests": "vendor/bin/phpunit tests",
         "interation_test": "vendor/bin/codecept run --steps"
     },

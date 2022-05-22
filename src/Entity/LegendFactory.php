@@ -13,6 +13,7 @@ class LegendFactory
 
     /**
      * Load and save all legend in LikedList
+     *
      * @param SimpleXMLIterator $legendNode
      */
     public function createLegend()

@@ -1,14 +1,18 @@
-#ignore dependances
+# ignore dependances
 vendor
-#ignore ide settigngs
+# ignore ide settigngs
 .idea
-#ignore documentation
+# ignore documentation
 documentation
-#ignore cache
+# ignore cache
 .phpunit.result.cache
 cache
-#ingore ENV
+# ingore ENV
 .env
-#ignore output
+# ignore output
 _output/**
 _data/**
+# ingore build
+build
+phpDocumentor.phar
+.phpdoc

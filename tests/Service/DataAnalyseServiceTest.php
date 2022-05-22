@@ -18,7 +18,9 @@ class DataAnalyseServiceTest extends TestCase
 
     protected DataAnalyseService $dataAnalyseService;
     protected array $modelData;
-
+    /**
+     * This method is called before each test.
+     */
     protected function setUp(): void
     {
         LoadDataService::loadDotEnv();

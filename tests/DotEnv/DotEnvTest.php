@@ -5,10 +5,13 @@ namespace Tests\DotEnv;
 use App\Service\LoadDataService;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * DotEnvTest provides to test the file DotEnv .env
+ */
 final class DotEnvTest extends TestCase
 {
     /**
-     * Get the config from .ENV
+     * This method is called before each test.
      */
     protected function setUp(): void
     {

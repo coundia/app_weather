@@ -5,20 +5,34 @@ use SplDoublyLinkedList;
 
 /**
  * The ClimateData class provides the functionalities for saving the XML element (StationData) as a doubly linked list.
+ *
  * @link https://php.net/manual/en/class.spldoublylinkedlist.php
  */
 class ClimateData extends \SplDoublyLinkedList
 {
-    private $lang;
+    /**
+     * @var string
+     */
+    private string $lang;
+    /**
+     * @var StationInformation
+     */
     private StationInformation $stationInformation;
+    /**
+     * @var Legend
+     */
     private $legend;
+    /**
+     * @var SplDoublyLinkedList
+     */
     private SplDoublyLinkedList $listStationData;
 
     /**
-     * @param StationInformation $stationInformation
-     * @param Legend $legend
-     * @param SplDoublyLinkedList $listStationData
-     * @param string $lang
+     *  Constructor of StationInformation
+     * @param StationInformation $stationInformation a StationInformation
+     * @param Legend $legend a Legend
+     * @param SplDoublyLinkedList $listStationData a SplDoublyLinkedList
+     * @param string $lang a lang
      */
     public function __construct(StationInformation $stationInformation, Legend $legend, SplDoublyLinkedList $listStationData, string $lang = "ENG")
     {
@@ -37,7 +51,7 @@ class ClimateData extends \SplDoublyLinkedList
     }
 
     /**
-     * @param mixed $lang
+     * @param string $lang
      */
     public function setLang($lang): void
     {

@@ -8,11 +8,12 @@ use Twig\TwigFilter;
 
 /**
  * TwigExtensionDate class add date  filter for French
+ *
  */
 class TwigExtensionDate extends AbstractExtension
 {
     /**
-     * get filters and add format_date_fr
+     * Get filters and add format_date_fr
      * @return TwigFilter[]
      */
     public function getFilters()
