@@ -7,7 +7,7 @@ use SplDoublyLinkedList;
  * The ClimateData class provides the functionalities for saving the XML element (StationData) as a doubly linked list.
  * @link https://php.net/manual/en/class.spldoublylinkedlist.php
  */
-class ClimateData
+class ClimateData extends \SplDoublyLinkedList
 {
     private $lang;
     private StationInformation $stationInformation;

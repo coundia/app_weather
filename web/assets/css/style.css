@@ -21,13 +21,20 @@
 }
 /*center a text*/
 .text-center{
-    text-align : center;
+    text-align: center;
 }
-.text-bold{
-    font-weight : bold;
-    font-size : 20px;
+
+.text-bold {
+    font-weight: bold;
+    font-size: 20px;
 }
+
 /*calendar month*/
-.calendar-month{
+.calendar-month {
     margin: 2px;
+}
+
+.avg_period_content {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
 }

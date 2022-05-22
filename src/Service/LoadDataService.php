@@ -8,7 +8,6 @@ use App\Entity\LegendFactory;
 use App\Entity\StationDataFactory;
 use App\Entity\StationInformationFactory;
 use Dotenv\Dotenv;
-use Exception;
 use SimpleXmlIterator;
 use function dirname;
 

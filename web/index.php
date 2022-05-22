@@ -3,8 +3,10 @@
 use App\Extension\TwigExtensionDate;
 use App\Service\DataAnalyseService;
 use App\Service\LoadDataService;
-//use Twig\Extra\Intl\IntlExtension;
+use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
+
+//use Twig\Extra\Intl\IntlExtension;
 
 require dirname(__DIR__) . '/vendor/autoload.php';
 
@@ -23,7 +25,7 @@ $dataAnalyseService = new  DataAnalyseService();
 $climateData = $serviceLoad->getAllStationData($xmlPath);
 
 //twig settings
-$twig = new \Twig\Environment($loader, [
+$twig = new Environment($loader, [
 //    'cache' => dirname(__DIR__) . '/cache',
     'cache' => false,
     'debug' => true,
@@ -36,14 +38,19 @@ $twig = new \Twig\Environment($loader, [
 //$twig->addExtension(new IntlExtension());
 $twig->addExtension(new TwigExtensionDate());
 //create array for the views
-setlocale (LC_TIME, 'fr_FR.utf8','fra');
+setlocale(LC_TIME, 'fr_FR.utf8', 'fra');
 
 $data = [];
 $data["title"] = LoadDataService::getVarsFromEnv("TITLE");
 $data["bestDayTitle"] = LoadDataService::getVarsFromEnv("BEST_DAY_TITLE");
 $data["dailyAvgTitle"] = LoadDataService::getVarsFromEnv("DAILY_AVG_TITLE");
-$data["temperatures"] = $dataAnalyseService->getWeatherData($climateData->getListStationData());
-#end bind data
-//dd($data);
+//get analyse data
+$data["analyseData"] = $dataAnalyseService->getListModelAnalysed($climateData->getListStationData());
+$data["weatherDateTime"] = $dataAnalyseService->getWeatherDateTime();
+$debut = date_create()->setDate(2015, 07, 9);
+$fin = date_create()->setDate(2015, 07, 19);
+
+$data["bestDaySummer"] = $dataAnalyseService->getBestDaySummerEvent($data["analyseData"], $debut, $fin);
+$data["avgTempByPeriod"] = $dataAnalyseService->getAvgTempByPeriod($data["analyseData"]);
 //render the views
 echo $twig->render('weather.html.twig', $data);

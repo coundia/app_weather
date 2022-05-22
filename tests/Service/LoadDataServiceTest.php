@@ -2,7 +2,6 @@
 
 namespace Tests\Service;
 use App\Service\LoadDataService;
-use Dotenv\Dotenv;
 use PHPUnit\Framework\TestCase;
 
 final class LoadDataServiceTest extends TestCase
@@ -38,12 +37,12 @@ final class LoadDataServiceTest extends TestCase
     /**
      * load  xml data
      */
-    public function testLoadedDataFromFile(): void
+    public function OftestLoadedDataFromFile(): void
     {
-        $path=dirname(__DIR__)."/../uploads/eng-hourly-07012015-07312015.xml";
-        $result= $this->loadDataService->getAllStationData($path);
-        $this->assertNotNull($result,'La fonction getAllStationData() renvoie NULL  .');
-        $this->assertNotEmpty($result->getListStationData()->count(),'Les données metéo sont vides .');
+        $path = dirname(__DIR__) . "/../uploads/eng-hourly-07012015-07312015.xml";
+        $result = $this->loadDataService->getAllStationData($path);
+        $this->assertNotNull($result, 'La fonction getAllStationData() renvoie NULL  .');
+        $this->assertNotEmpty($result->getListStationData()->count(), 'Les données metéo sont vides .');
     }
 
 

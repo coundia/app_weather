@@ -2,10 +2,19 @@
 
 namespace App\Extension;
 
+use Datetime;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
+
+/**
+ * TwigExtensionDate class add date  filter for French
+ */
 class TwigExtensionDate extends AbstractExtension
 {
+    /**
+     * get filters and add format_date_fr
+     * @return TwigFilter[]
+     */
     public function getFilters()
     {
         return [
@@ -15,20 +24,20 @@ class TwigExtensionDate extends AbstractExtension
 
     /**
      * Get date in French
-     * @param \Datetime $datetime
+     * @param Datetime $datetime
      * @param bool $full_date
      * @return string
      */
-    public function dateFr(\Datetime $datetime,bool $full_date=false ): string
+    public function dateFr(Datetime $datetime, bool $full_date = false): string
     {
-        $day = array("Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi");
+        $day = array("Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi");
         $month = array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre");
-        $dateGived=$datetime->format("w|d|n|Y");
+        $dateGived = $datetime->format("w|d|n|Y");
         $date = explode('|', $dateGived);
-        if($full_date){
-            $date_fr=$day[$date[0]] . ' ' . $date[1] . ' ' . $month[$date[2]-1] . ' ' . $date[3];
-        }else{
-            $date_fr=$month[$date[2]-1] . ' ' . $date[3];
+        if ($full_date) {
+            $date_fr = $day[$date[0]] . ' ' . $date[1] . ' ' . $month[$date[2] - 1] . ' ' . $date[3];
+        } else {
+            $date_fr = $month[$date[2] - 1] . ' ' . $date[3];
         }
         return $date_fr;
     }

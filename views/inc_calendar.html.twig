@@ -1,8 +1,8 @@
 {#convert date to int #}
-{% set climateDate=temperatures['date'] |date("U") %}
+{% set weatherDateTimeInt  =weatherDateTime|date("U") %}
 <div class="calendar-grid">
     <div class="calendar-month text-center text-bold">
-        {{ temperatures['date']|format_date_fr }}
+        {{ weatherDateTime | format_date_fr }}
     </div>
     <div class="calendar-day text-center text-bold">
         <div class="day-item">Dimanche</div>
@@ -15,8 +15,8 @@
     </div>
 
     <div class="calendar-item">
-        {% set numberOfDaysInMonth = climateDate|date('t') %}
-        {% set firstDays = climateDate|date('F 1\\s\\t Y')|date('w')   %}
+        {% set numberOfDaysInMonth = weatherDateTimeInt|date('t') %}
+        {% set firstDays = weatherDateTimeInt|date('F 1\\s\\t Y')|date('w') %}
         {% if firstDays and firstDays!=0 %}
             {% for n in range(1,firstDays) %}
                 <div class="before-first-day"></div>
@@ -24,13 +24,13 @@
         {% endif %}
         {% for day in range(1,numberOfDaysInMonth) %}
             <div class="date-grid-content text-center  ">
-                    <div class="  text-bold">{{ day }}</div>
-                    <hr/>
-                     {% if temperatures[day]  is defined %}
-                        <div>Max : {{ temperatures[day]['max'] }}</div>
-                        <div>Min : {{ temperatures[day]['min'] }}</div>
-                        <div>Moy : {{ temperatures[day]['moy'] }}</div>
-                    {% endif %}
+                <div class="  text-bold">{{ day }}</div>
+                <hr/>
+                {% if analyseData[day]  is defined %}
+                    <div>Max : {{ analyseData[day].dayMaxTemp }}</div>
+                    <div>Min : {{ analyseData[day].dayMinTemp }}</div>
+                    <div>Moy : {{ analyseData[day].dayAvgTemp }}</div>
+                {% endif %}
                 <hr/>
             </div>
         {% endfor %}

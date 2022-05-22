@@ -7,16 +7,16 @@ use function date_create;
 /****
  * The StationDataFactory create  a StationData from a recursive iteration
  * over all nodes of a <b>SimpleXMLIterator</b> object.
- * @param \SimpleXMLIterator $data
+ * @param SimpleXMLIterator $data
  * @link https://php.net/manual/en/class.simplexmliterator.php
  */
 class StationDataFactory
 {
     /**
-     * @param \SimpleXMLIterator $stationDataNode station data xml node
+     * @param SimpleXMLIterator $stationDataNode station data xml node
      * @return StationData a station data
      */
-    public function createStationDataFromXmlNode(\SimpleXMLIterator $stationDataNode): StationData
+    public function createStationDataFromXmlNode(SimpleXMLIterator $stationDataNode): StationData
     {
         $datetime = date_create();
         $attribute = $stationDataNode->attributes();
