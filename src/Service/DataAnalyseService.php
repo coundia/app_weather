@@ -59,11 +59,14 @@ class DataAnalyseService
         $goodDay = $listModel[1];
         $goodDayNumber = $dayStart;
         for ($i = $dayStart; $i <= $dayEnd; $i++) {
-            /** @var Model $model */
-            $model = $listModel[$i];
-            if ($goodDay->getAfternoonWeightAverage() > $model->getAfternoonWeightAverage()) {
-                $goodDay = $model;
-                $goodDayNumber = $i;
+            if ($i <= sizeof($listModel)) {
+                /** @var Model $model */
+                $model = $listModel[$i];
+                //get the max weight (Average) on afternoon
+                if ($model->getAfternoonWeightAverage() > $goodDay->getAfternoonWeightAverage()) {
+                    $goodDay = $model;
+                    $goodDayNumber = $i;
+                }
             }
         }
         return $date->setDate($this->weatherDateTime->format("Y"), $this->weatherDateTime->format("m"), $goodDayNumber);
@@ -187,15 +190,19 @@ class DataAnalyseService
     /**
      * getAvgTempByPeriod method give Average by moning evening afternoon and night
      * @param array $analyseData
-     * @param Model $analyseData
+     * @param int $nbDays
+     * @return Model
      */
-    public function getAvgTempByPeriod(array $analyseData): Model
+    public function getAvgTempByPeriod(array $analyseData, int $nbDays = 0): Model
     {
         $morningTempAverage = 0;
         $afternoonTempAverage = 0;
         $eveningTempAverage = 0;
         $nightTempAverage = 0;
-        $nbDays = $this->getWeatherDateTime()->format("W");
+        //get number of days of current month
+        if ($nbDays == 0) {
+            $nbDays = $this->getWeatherDateTime()->format("W");
+        }
 
         for ($i = 1; $i <= sizeof($analyseData); $i++) {
             /** @var Model $model */

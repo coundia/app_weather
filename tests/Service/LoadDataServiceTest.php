@@ -4,6 +4,9 @@ namespace Tests\Service;
 use App\Service\LoadDataService;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * LoadDataServiceTest class test Loaded Data
+ */
 final class LoadDataServiceTest extends TestCase
 {
 
@@ -37,7 +40,7 @@ final class LoadDataServiceTest extends TestCase
     /**
      * load  xml data
      */
-    public function OftestLoadedDataFromFile(): void
+    public function testLoadedDataFromFile(): void
     {
         $path = dirname(__DIR__) . "/../uploads/eng-hourly-07012015-07312015.xml";
         $result = $this->loadDataService->getAllStationData($path);

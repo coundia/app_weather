@@ -55,7 +55,7 @@ class LoadDataService
      */
     public function getAllStationData(string $path):ClimateData
     {
-        $xml = new SimpleXmlIterator($path, 0, true);
+        $xml = new \SimpleXmlIterator($path, 0, true);
         //create the factories
 
         //load and store lang node in climateData

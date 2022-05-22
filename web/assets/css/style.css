@@ -1,4 +1,4 @@
-/*main grid*/
+/* App main grid*/
 .grid-container{
     display: grid;
 }
@@ -33,7 +33,7 @@
 .calendar-month {
     margin: 2px;
 }
-
+/* avg Temp By Period main Grid */
 .avg_period_content {
     display: grid;
     grid-template-columns: repeat(4,1fr);
