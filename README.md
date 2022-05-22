@@ -107,11 +107,11 @@ juillet 2015.
 
 ## Lancer le projet
     composer start 
-    run the project on  [http://localhost:8888/](http://localhost:8888/)
+run the project on  [http://localhost:8888/](http://localhost:8888/)
 
 ## Voir la documentation (phpDoc) du  projet
     composer docs 
-    run the project on  [http://localhost:8889/](http://localhost:8889/)
+run the project on  [http://localhost:8889/](http://localhost:8889/)
 
 ## Lien publique pour tester (heroku)
 
