@@ -34,6 +34,8 @@ juillet 2015.
 ├── HELP.md                     # Fichier contenant le reference des dependances utilisees 
 ├── README.md                   # Fichier contenant la documentation du projet
 ├── docs                        # Dossier  contenant la documentation du code (phpDoc)
+├── docker-compose.yml          # COnfigurations des services docker (php)
+├── .docker                     # Dossiers des config docker  
 └── .env                        # Fichier de configuration des parametres du projet
 </pre>
 
@@ -107,16 +109,20 @@ juillet 2015.
 
 ## Lancer le projet
     composer start 
-run the project on  [http://localhost:8888/](http://localhost:8888/)
+        ou bien utiliser docker
+    docker-compose up  --build
+le projet sera accessible ici :  [http://localhost:8888/](http://localhost:8888/)
 
 ## Voir la documentation (phpDoc) du  projet
     composer docs 
-run the project on  [http://localhost:8889/](http://localhost:8889/)
+le projet sera accessible ici :  [http://localhost:8889/](http://localhost:8889/)
 
 ## Lien publique pour tester (heroku)
 
 [https://cnd-app-weather.herokuapp.com/](https://cnd-app-weather.herokuapp.com/)
 
+###  Lien  docker Hub : 
+    docker pull coundia/app-weather:latest
 
 ## References 
 
